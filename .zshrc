@@ -2,12 +2,12 @@
 PROMPT='%F{green}%n%f %F{red}%B%~%b%f %F{purple} 󰣘 :'
 
 # Aliases
-alias ls='ls'
-alias vd='ls -1'
-alias grep='grep'
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls='ls --color=auto'
+alias vd='ls -1 --color=auto'
+alias grep='grep --color=auto'
+alias ll='ls -l --color=auto'
+alias la='ls -A --color=auto'
+alias l='ls -CF --color=auto'
 alias fman='bash -c "compgen -c" | fzf | xargs man'
 alias py='python3'
 
@@ -28,7 +28,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-source /home/jonas/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+# source /home/jonas/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source /home/jonas/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:$HOME/.local/bin"
@@ -78,3 +78,7 @@ python_venv() {
 }
 autoload -U add-zsh-hook
 add-zsh-hook chpwd python_venv
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
