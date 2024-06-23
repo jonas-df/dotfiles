@@ -29,3 +29,9 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias ls="eza --icons=always"
 alias la="eza -T -L=1 -la --no-permissions"
 alias l="eza -T -L=2 -l"
+
+# Handling of Ruby versions by adding rbenv to PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+# Initialize rbenv
+eval "$(rbenv init -)"
+
