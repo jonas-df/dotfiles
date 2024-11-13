@@ -45,5 +45,5 @@ if [ -f '/Users/jonas/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jonas/goo
 if [ -f '/Users/jonas/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jonas/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Two aliases for opening new tmux windows using rg
-alias rgw="rg --line-number '' | fzf --ansi --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' --delimiter ':' --bind 'enter:execute(tmux new-window \"nvim {1} +{2}\")'"
 alias rgp="rg --line-number '' | fzf --ansi --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' --delimiter ':' --bind 'enter:execute(tmux split-window -h \"nvim {1} +{2}\")'"
+alias rgw='rg --line-number "" | fzf --ansi --preview "bat --style=numbers --color=always --highlight-line {2} {1}" --delimiter ":" --bind "enter:execute(sh -c '\''[ -n \"${TMUX}\" ] && tmux new-window \"nvim {1} +{2}\" || nvim {1} +{2}'\'')+abort"'
